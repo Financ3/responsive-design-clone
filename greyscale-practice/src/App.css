@@ -1,0 +1,599 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+button {
+  background-color: #64A19D;
+  border: none;
+  border-radius: 5px;
+  height: 45px;
+  color: white;
+  cursor: pointer;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a {
+  color: #64A19D;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(248, 248, 248);
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  top: 65px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.root {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+}
+
+  /* HEADER STYLES */
+  header {
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+  }
+
+    .headerContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 15px;
+      height: 75px;
+    }
+
+      .headerContainer h3 {
+        display: block;
+      }
+
+      .menuButton {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        color: #64A19D;
+        border: 1px solid #64A19D;
+      }
+
+        .menuButton svg {
+          margin-left: 10px;
+          fill: #64A19D;
+        }
+
+    nav {
+      overflow: hidden;
+      width: 100%;
+    }
+
+      nav ul {
+        list-style: none;
+        padding: 0px 50px;
+        margin-bottom: 20px;
+      }
+
+        nav ul li {
+          margin-bottom: 5px;;
+        }
+
+          nav ul li a {
+            color:rgb(138, 138, 138);
+          }
+        /* These three classes are assigned to the nav menu. They are changed depending on whether the user has clicked the "menu" button. In the react code the function that handles this is called "toggleMenu" and is on the Header component*/
+        .noDisplay {
+          display: none;
+        }
+
+        .inProgress {
+          animation: navOut 1s 1;
+        }
+
+        .display {
+          animation: navIn 1s 1;
+        } 
+
+/*MAIN STYLES*/
+  .mainContent {
+    position: relative;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+    .mainTopContent {
+      position: relative;
+      background-image: linear-gradient(to bottom, rgba(82, 82, 82, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000), url("https://startbootstrap.github.io/startbootstrap-grayscale/assets/img/bg-masthead.jpg");
+      background-color: #212121; /* Used if the image is unavailable */
+      height: 100%; /* You must set a specified height */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* Resize the background image to cover the entire */
+
+      flex-grow: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      color: rgb(187, 187, 187);
+    }
+
+      .mainTopContent h1 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-bottom: 15px;
+        max-width: 600px;
+        letter-spacing: 10px;
+        color: transparent;
+        background: linear-gradient(white, rgb(207, 207, 207), rgb(138, 138, 138));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: normal;
+      }
+
+      .mainTopContent p {
+        max-width: 400px;
+      }
+
+      .mainTopContent button {
+        width: 120px;
+        margin-top: 30px;
+      }
+
+    .mainBottomContent {
+      background-image: linear-gradient(to bottom, #000000, rgba(82, 82, 82, 0.3));
+      background-color: #212121; /* Used if the image is unavailable */
+      height: 100%; /* You must set a specified height */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* Resize the background image to cover the entire */
+
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      color: rgb(187, 187, 187);;
+    }
+
+      .mainBottomContent h2 {
+        margin-bottom: 15px;
+        max-width: 400px;
+        color: white;
+      }
+
+      .mainBottomContent p {
+        max-width: 400px;
+      }
+
+      .mainContent .imgContainer {
+        position: relative;
+        bottom: -5px;
+        margin-top: 30px;
+        max-width: 400px;
+      }
+
+/* SHORELINE - SECTION STYLES*/
+  .shoreline {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 100px 15px 30px 15px;
+  }
+
+    .shoreline .imgContainer {
+      margin-bottom: 15px;
+    }
+
+/* MISTY MOUNTAIN - SECTION STYLES*/
+    .mistyMountains {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+      .misty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: rgb(187, 187, 187);;
+        margin: 0px 15px 50px 15px;
+      }
+
+        .mistyContent {
+          position: relative;
+          top: -4px;
+          padding: 30px 60px;
+          text-align: center;
+          border-top: 1px solid rgb(165, 165, 165);
+          background-color: black;
+          max-width: 700px;
+        }
+
+      .mountains {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: rgb(187, 187, 187);;
+        margin: 0px 15px 50px 15px;
+      }
+
+        .mountainsContent {
+          position: relative;
+          top: -4px;
+          padding: 30px 60px;
+          text-align: center;
+          border-top: 1px solid rgb(165, 165, 165);
+          background-color: black;
+          max-width: 700px;
+        }
+
+          .mistyMountains h3 {
+            color: white;
+          }
+
+  /* SUBSCRIBE STYLES */
+  .subscribe {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    color: white;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("https://startbootstrap.github.io/startbootstrap-grayscale/assets/img/bg-signup.jpg");
+    background-color: #212121; /* Used if the image is unavailable */
+    height: 100%; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the */
+  }
+
+    .subscribeContainer {
+      height: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+      .subscribeContainer p {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+
+      .formContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+        .formContainer input {
+          height: 50px;
+          margin: 15px 0px;
+          width: 100%;
+          max-width: 450px;
+          border-radius: 8px;
+          border: none;
+          padding-left: 15px;
+        }
+
+        .formContainer button {
+          width: 125px;
+        }
+
+  /* CONTACT STYLES */
+  .contactContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #010101;
+  }
+
+  .contactUsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 30px;
+    width: 100%;
+    
+    text-align: center;
+  }
+
+    .contactArticle {
+      background-color: #FFFFFF;
+      height: 150px;
+      width: 300px;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 3px solid #64A19D;
+    }
+
+      .contactArticle h4 {
+        color: black;
+      }
+
+      .contactArticle hr {
+        width: 50px;
+        border: solid 2px #64A19D;
+        margin: 10px 0px;
+      }
+
+      .contactArticle p {
+        color: rgb(114, 114, 114);
+      }
+
+    .socialIcons {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0px 0px 0px;
+    }
+      
+      .socialContainer {
+        height: 45px;
+        width: 45px;
+        background-color: rgb(58, 58, 58);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 15px;
+      }
+
+      .socialIcons svg {
+        height: 20px;
+      }
+
+  footer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    color: rgb(112, 112, 112);
+  }
+
+/*styling for screens larger than 750 pixels. */
+@media(min-width: 750px) {
+  p {
+    font-size: 18px;
+  }
+
+  /* HEADER STYLES*/
+  .headerContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /*MAIN STYLES*/
+      .mainTopContent h1 {
+        font-size: 40px;
+      }
+
+      .mainBottomContent p {
+        max-width: 550px;
+      }
+
+      .mainContent .imgContainer {
+        max-width: 550px;
+      }
+
+  /* SHORELINE - SECTION STYLES*/
+    .shoreline {
+      max-width: 750px;
+    }
+
+    .shoreline h4 {
+      font-size: 25px;
+    }
+
+    /* MISTY MOUNTAIN - SECTION STYLES*/
+    .mistyMountains p {
+      font-size: 18px;
+    }
+
+    .mistyMountains h3 {
+      font-size: 25px;
+    }
+
+  /* SUBSCRIBE STYLES */
+      .formContainer {
+        flex-direction: row; /**/
+      }
+
+        .formContainer input {
+          margin: 15px 20px; /**/
+          width: 300px; /**/
+        }
+
+  /* CONTACT STYLES */
+  .contactUsContainer {
+    flex-direction: row; /* */
+    flex-wrap: wrap; /* */
+  }
+
+    .contactArticle {
+      flex-basis: 25%; /* */
+    }
+
+
+}
+/*Styling for screens larger than 1000 pixels */
+@media(min-width: 1000px) {
+/* HEADER STYLES*/
+  header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+  }
+
+    .headerContainer {
+      width: 300px;
+    }
+
+      .menuButton {
+        display: none;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px;
+      }
+
+        nav ul li {
+          margin: 0px 20px; 
+        }
+
+
+        .noDisplay {
+          display: block;
+        }
+
+        .display {
+          animation: block;
+        } 
+  /* MAIN STYLES*/
+  .mainTopContent h1 {
+    font-size: 60px;
+  }
+
+  .mainTopContent p {
+    font-size: large;
+  }
+
+  .mainBottomContent h2 {
+    font-size: 30px;
+  }
+
+  .mainBottomContent p {
+    font-size: large;
+
+  }
+
+  .mainBottomContent .imgContainer {
+    max-width: 750px;
+  }
+
+  /* SHORELINE - SECTION STYLES*/
+  .shoreline {
+    flex-direction: row;
+    max-width: 1000px;
+  }
+
+    .shorelineContent {
+      padding-left: 20px;
+      border-left: solid 5px #64A19D;
+    }
+
+  /* MISTY MOUNTAIN - SECTION STYLES*/
+  .mistyMountains {
+    max-width: 1000px;
+  }
+
+    .misty {
+      flex-direction: row;/*/////*/
+      align-items: stretch;/*/////*/
+      margin: 0px 15px 30px 15px;/*/////*/
+    }
+
+      .mistyContent {
+        top: 0px;/*/////*/
+        margin-bottom: 4px;/*/////*/
+      }
+
+    .mountains {
+      flex-direction: row;/*/////*/
+      align-items: stretch;/*/////*/
+    }
+
+      .mountainsContent {
+        position: relative;
+        top: 0px;/*/////*/
+        margin-bottom: 4px;/*/////*/
+        padding: 30px 60px;
+        text-align: center;
+        border-top: 1px solid rgb(165, 165, 165);
+        background-color: black;
+        max-width: 700px;
+      }
+
+  /* CONTACT STYLES */
+  .contactUsContainer {
+    max-width: 1000px;
+  }
+
+    .contactArticle {
+      flex-basis: 28%; /* */
+    }
+
+
+}
+
+
+/*Animations*/
+@keyframes navIn {
+  0% {
+    max-height: 0px;
+  }
+
+  100% {
+    max-height: 600px;
+  }
+}
+
+@keyframes navOut {
+  0% {
+    max-height: 600px;
+  }
+
+  100% {
+    max-height: 0px;
+  }
+}
+
